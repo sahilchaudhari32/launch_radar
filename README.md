@@ -1,10 +1,27 @@
 <h1>Sahil Chaudhari</h1>
 
+<h1 align="center">🏆 LaunchRadar</h1>
 
-# 🏆 LaunchRadar
-> **Discover New Brands & Predict Future Products**
+<p align="center">
+  <strong>Discover New Brands & Predict Future Products</strong>
+</p>
 
-Consumers and tech enthusiasts often struggle to keep track of emerging startups and are constantly guessing what major tech giants will build next. **LaunchRadar** is a centralized platform that bridges this gap. It showcases innovative new brands entering the market and leverages AI to predict future product launches from existing famous brands based on market trends, tech news, and patents.
+<p align="center">
+  <img src="https://img.shields.io/github/license/sahilchaudhari32/launch_radar?style=flat-square&color=5D5DFF" alt="License" />
+  <img src="https://img.shields.io/github/issues/sahilchaudhari32/launch_radar?style=flat-square&color=5D5DFF" alt="Issues" />
+  <img src="https://img.shields.io/github/stars/sahilchaudhari32/launch_radar?style=flat-square&color=5D5DFF" alt="Stars" />
+</p>
+
+---
+
+## 📖 Table of Contents
+- [Overview](#-overview)
+- [Core Features](#-core-features)
+- [How it Works](#-how-the-ai-works)
+- [Tech Stack](#-tech-stack)
+- [Future Roadmap](#-future-roadmap)
+- [Why LaunchRadar?](#-why-this-idea-is-a-hackathon-winner)
+- [Getting Started](#-getting-started)
 
 ---
 
@@ -14,7 +31,7 @@ Consumers and tech enthusiasts often struggle to keep track of emerging startups
 Information about emerging startups, new product launches, and future innovations is highly scattered across news sites, patent filings, and social media. There is no single place to discover tomorrow's technology today.
 
 ### The Solution
-LaunchRadar provides a unified, beautifully designed web platform that:
+**LaunchRadar** provides a unified, beautifully designed web platform that:
 * **Showcases** new, under-the-radar brands and their upcoming products.
 * **Predicts** future product launches from major brands (like Apple, Tesla, or Nike) using AI-driven market trend analysis.
 
@@ -47,24 +64,17 @@ LaunchRadar provides a unified, beautifully designed web platform that:
 
 ---
 
-## 🚀 Future Roadmap
-
-* **Founder Submissions:** Allow startup founders to submit their new brands to the platform for approval.
-* **User Accounts:** Let users save their favorite brands, track specific categories, and manage their votes.
-* **Launch Alerts:** Get notified when a predicted product is officially announced in real life.
-
----
-
 ## 🤖 How the AI Works
 
 LaunchRadar integrates seamlessly with the **Gemini / OpenAI API** to process vast amounts of unstructured data. The AI engine runs periodic analysis on:
 
-1. Recent tech news headlines
-2. Global market trend reports
-3. Publicly filed patents
-4. Recent hardware/software startup launches
+1.  **Recent tech news headlines**
+2.  **Global market trend reports**
+3.  **Publicly filed patents**
+4.  **Recent hardware/software startup launches**
 
-*It synthesizes this data to output structured predictions, complete with a product name, expected features, and a rationale for why the brand would build it.*
+> [!TIP]
+> It synthesizes this data to output structured predictions, complete with a product name, expected features, and a rationale for why the brand would build it.
 
 ---
 
@@ -79,8 +89,50 @@ LaunchRadar integrates seamlessly with the **Gemini / OpenAI API** to process va
 
 ---
 
+## 🚀 Future Roadmap
+
+- [ ] **Founder Submissions:** Allow startup founders to submit their new brands to the platform for approval.
+- [ ] **User Accounts:** Let users save their favorite brands, track specific categories, and manage their votes.
+- [ ] **Launch Alerts:** Get notified when a predicted product is officially announced in real life.
+
+---
+
 ## 🏆 Why This Idea is a Hackathon Winner
 
-* **Unique Concept:** It beautifully combines startup discovery with AI-generated foresight.
-* **High Engagement:** The voting system and "what if" nature of the predictions make it highly interactive for users.
-* **Showcases Modern Tech:** Effectively demonstrates the practical use of Large Language Models (LLMs) beyond simple chatbots, using them for high-level data synthesis and predictive modeling.
+*   **Unique Concept:** It beautifully combines startup discovery with AI-generated foresight.
+*   **High Engagement:** The voting system and "what if" nature of the predictions make it highly interactive for users.
+*   **Showcases Modern Tech:** Effectively demonstrates the practical use of Large Language Models (LLMs) beyond simple chatbots, using them for high-level data synthesis and predictive modeling.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB
+- OpenAI/Gemini API Key
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sahilchaudhari32/launch_radar.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables in a `.env` file:
+   ```env
+   PORT=5000
+   MONGO_URI=your_mongodb_uri
+   API_KEY=your_ai_api_key
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+<p align="center">Made with ❤️ by Sahil Chaudhari</p>
