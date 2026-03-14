@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onAuthOpen }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -11,6 +11,7 @@ const Navbar = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center gap-3 cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 2L2 30L16 24L30 30L16 2Z" fill="#2B59FF" stroke="#2B59FF" strokeWidth="2" strokeLinejoin="round"/>
@@ -44,6 +45,7 @@ const Navbar = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => onAuthOpen('SIGNUP')}
             className="btn btn-primary !px-5 !py-2 !text-[0.9rem]"
           >
             Sign Up
@@ -51,6 +53,7 @@ const Navbar = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => onAuthOpen('LOGIN')}
             className="btn !bg-primary !text-white hover:!bg-primary/90 !px-5 !py-2 !text-[0.9rem]"
           >
             Login
@@ -113,8 +116,18 @@ const Navbar = () => {
                 </svg>
                 <input type="text" placeholder="Search startups..." className="bg-transparent border-none outline-none text-lg w-full" />
               </div>
-              <button className="btn btn-primary w-full !py-4 text-lg">Sign Up</button>
-              <button className="btn !bg-primary !text-white w-full !py-4 text-lg">Login</button>
+              <button 
+                onClick={() => { onAuthOpen('SIGNUP'); setIsMenuOpen(false); }}
+                className="btn btn-primary w-full !py-4 text-lg"
+              >
+                Sign Up
+              </button>
+              <button 
+                onClick={() => { onAuthOpen('LOGIN'); setIsMenuOpen(false); }}
+                className="btn !bg-primary !text-white w-full !py-4 text-lg"
+              >
+                Login
+              </button>
             </motion.div>
           </motion.div>
         )}
@@ -123,7 +136,5 @@ const Navbar = () => {
   );
 };
 
-
-
-
 export default Navbar;
+

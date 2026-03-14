@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-const CTA = () => {
+const CTA = ({ onAuthOpen }) => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32" id="cta">
       <div className="container">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -28,6 +28,7 @@ const CTA = () => {
               <motion.button 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => onAuthOpen('SIGNUP')}
                 className="btn bg-white text-primary hover:bg-slate-50 transition-all duration-300 w-full sm:w-auto"
               >Join the Waitlist</motion.button>
               <motion.button 
@@ -59,6 +60,7 @@ const CTA = () => {
     </section>
   );
 };
+
 
 
 
