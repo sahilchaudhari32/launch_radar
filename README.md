@@ -16,18 +16,6 @@
 
 ---
 
-## 📖 Table of Contents
-- [Overview](#-overview)
-- [Core Features](#-core-features)
-- [How it Works](#-how-the-ai-works)
-- [Tech Stack](#-tech-stack)
-- [Future Roadmap](#-future-roadmap)
-- [Why LaunchRadar?](#-why-this-idea-is-a-hackathon-winner)
-- [Getting Started](#-getting-started)
-
-
----
-
 ## 📖 Overview
 
 ### The Problem
