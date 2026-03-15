@@ -23,9 +23,9 @@ const Sidebar = () => {
     { name: 'AI Predictions', icon: Zap, path: '/predictions' },
     { name: 'Brands', icon: Briefcase, path: '/brands' },
     { name: 'Market Insights', icon: BarChart3, path: '/market-intelligence' },
-    { name: 'Store', icon: Store, path: '#' },
-    { name: 'Admin', icon: UserCog, path: '#' },
-    { name: 'Settings', icon: Settings, path: '#' },
+    { name: 'Store', icon: Store, path: '/store' },
+    { name: 'Admin', icon: UserCog, path: '/admin' },
+    { name: 'Settings', icon: Settings, path: '/settings' },
   ];
 
   const isActive = (path) => {

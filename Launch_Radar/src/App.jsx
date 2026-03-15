@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -18,6 +19,21 @@ import CreateBrand from './components/CreateBrand';
 import BrandDetail from './components/BrandDetail';
 import MarketIntelligence from './components/MarketIntelligence';
 import SectorReport from './components/SectorReport';
+import Store from './components/Store';
+import Cart from './components/Cart';
+import CheckoutDelivery from './components/CheckoutDelivery';
+import CheckoutPayment from './components/CheckoutPayment';
+import AdminConsole from './components/AdminConsole';
+import AddProduct from './components/AddProduct';
+import Settings from './components/Settings';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -71,6 +87,13 @@ function App() {
           <Route path="/brands/neuraledge" element={<PageWrapper><BrandDetail /></PageWrapper>} />
           <Route path="/market-intelligence" element={<PageWrapper><MarketIntelligence /></PageWrapper>} />
           <Route path="/reports/ai" element={<PageWrapper><SectorReport /></PageWrapper>} />
+          <Route path="/store" element={<PageWrapper><Store /></PageWrapper>} />
+          <Route path="/cart" element={<PageWrapper><Cart /></PageWrapper>} />
+          <Route path="/checkout/delivery" element={<PageWrapper><CheckoutDelivery /></PageWrapper>} />
+          <Route path="/checkout/payment" element={<PageWrapper><CheckoutPayment /></PageWrapper>} />
+          <Route path="/admin" element={<PageWrapper><AdminConsole /></PageWrapper>} />
+          <Route path="/admin/products/new" element={<PageWrapper><AddProduct /></PageWrapper>} />
+          <Route path="/settings" element={<PageWrapper><Settings /></PageWrapper>} />
           
           {/* Catch all redirect */}
           <Route path="*" element={<Navigate to="/" replace />} />
@@ -82,6 +105,7 @@ function App() {
 
 const AppWrapper = () => (
   <Router>
+    <ScrollToTop />
     <App />
   </Router>
 );
