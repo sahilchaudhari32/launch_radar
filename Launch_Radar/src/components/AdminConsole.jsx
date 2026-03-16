@@ -23,6 +23,7 @@ import {
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import { useApp } from '../context/AppContext';
 
 const IconMap = {
   Cpu, ShieldCheck, BarChart3, Zap
@@ -54,16 +55,54 @@ const StatCard = ({ title, value, trend, icon: Icon, trendColor, index }) => (
 
 const AdminConsole = () => {
   const navigate = useNavigate();
+  const { user } = useApp();
   const [adminData, setAdminData] = React.useState({ revenueData: [], regions: [], products: [] });
+  const [users, setUsers] = React.useState([]);
+  const [adminStats, setAdminStats] = React.useState({ totalUsers: 0, totalProducts: 0, activeUsers: 0, revenue: '...' });
+  const [activeTab, setActiveTab] = React.useState('overview');
 
   React.useEffect(() => {
     fetch('http://localhost:5000/api/admin-console')
       .then(res => res.json())
-      .then(result => {
-        if (result) setAdminData(result);
-      })
+      .then(result => { if (result) setAdminData(result); })
+      .catch(console.error);
+    
+    fetch('http://localhost:5000/api/admin/stats')
+      .then(res => res.json())
+      .then(data => setAdminStats(data))
       .catch(console.error);
   }, []);
+
+  const loadUsers = React.useCallback(() => {
+    fetch('http://localhost:5000/api/admin/users')
+      .then(res => res.json())
+      .then(data => setUsers(Array.isArray(data) ? data : []))
+      .catch(console.error);
+  }, []);
+
+  React.useEffect(() => {
+    if (activeTab === 'users') loadUsers();
+  }, [activeTab, loadUsers]);
+
+  const handleDeleteUser = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this user?')) return;
+    try {
+      await fetch(`http://localhost:5000/api/admin/users/${id}`, { method: 'DELETE' });
+      setUsers(u => u.filter(usr => String(usr.id) !== String(id)));
+    } catch (e) { console.error(e); }
+  };
+
+  const handleChangePlan = async (id, plan) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan })
+      });
+      const updated = await res.json();
+      setUsers(u => u.map(usr => String(usr.id) === String(id) ? { ...usr, plan: updated.plan } : usr));
+    } catch (e) { console.error(e); }
+  };
 
   return (
     <div className="flex min-h-screen bg-[#f8fafc]">
@@ -92,13 +131,94 @@ const AdminConsole = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-2">
-          <StatCard title="Total Earnings" value="$128,430.00" trend="+12.5%" icon={DollarSign} trendColor="green" index={0} />
-          <StatCard title="Net Loss" value="-$4,210.50" trend="-2.1%" icon={TrendingDown} trendColor="red" index={1} />
-          <StatCard title="Active Orders" value="1,240" trend="+8.4%" icon={ShoppingBag} trendColor="green" index={2} />
-          <StatCard title="Total Users" value="45.2k" trend="+4.2%" icon={Users} trendColor="green" index={3} />
+          <StatCard title="Total Earnings" value={adminStats.revenue} trend="+12.5%" icon={DollarSign} trendColor="green" index={0} />
+          <StatCard title="Total Users" value={String(adminStats.totalUsers)} trend="+4.2%" icon={Users} trendColor="green" index={1} />
+          <StatCard title="Active Users" value={String(adminStats.activeUsers)} trend="+8.4%" icon={ShoppingBag} trendColor="green" index={2} />
+          <StatCard title="Total Products" value={String(adminStats.totalProducts)} trend="+2.1%" icon={TrendingUp} trendColor="green" index={3} />
         </div>
 
-        {/* Charts Section */}
+        {/* Tab Navigation */}
+        <div className="flex gap-4 border-b border-[#f1f5f9] mb-12 px-2">
+          {[['overview', 'Overview'], ['users', 'User Management'], ['products', 'Products']].map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setActiveTab(key)}
+              className={`pb-4 px-2 text-[11px] font-black uppercase tracking-widest transition-all relative ${
+                activeTab === key ? 'text-primary' : 'text-[#94a3b8] hover:text-[#1e293b]'
+              }`}
+            >
+              {label}
+              {activeTab === key && (
+                <motion.div layoutId="adminTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full" />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Users Management Tab */}
+        {activeTab === 'users' && (
+          <div className="px-2 pb-20">
+            <div className="bg-white rounded-[40px] border border-[#eef2f6] shadow-sm overflow-hidden">
+              <div className="p-8 flex justify-between items-center border-b border-[#f1f5f9]">
+                <h3 className="text-xl font-black text-[#1e293b] tracking-tight">Registered Users</h3>
+                <span className="text-[10px] font-black text-[#94a3b8] uppercase tracking-widest">{users.length} total</span>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-[#f1f5f9]">
+                      {['User', 'Email', 'Plan', 'Joined', 'Actions'].map(h => (
+                        <th key={h} className="px-8 py-4 text-left text-[10px] font-black text-[#94a3b8] uppercase tracking-widest">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.length === 0 ? (
+                      <tr><td colSpan={5} className="px-8 py-12 text-center text-[#94a3b8] font-bold text-sm">No users found. Users will appear here after they sign up.</td></tr>
+                    ) : users.map((u, i) => (
+                      <tr key={u.id || i} className="border-b border-[#f8fafc] hover:bg-[#f8fafc] transition-colors">
+                        <td className="px-8 py-5">
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-black text-sm">
+                              {(u.name || '?')[0].toUpperCase()}
+                            </div>
+                            <span className="font-bold text-sm text-[#1e293b]">{u.name}</span>
+                          </div>
+                        </td>
+                        <td className="px-8 py-5 text-sm font-medium text-[#64748b]">{u.email}</td>
+                        <td className="px-8 py-5">
+                          <select
+                            value={u.plan || 'Free Tier'}
+                            onChange={e => handleChangePlan(u.id, e.target.value)}
+                            className="px-3 py-1.5 bg-[#f1f5f9] border border-[#e2e8f0] rounded-lg text-[10px] font-black text-[#1e293b] cursor-pointer"
+                          >
+                            {['Free Tier', 'Pro Plan', 'Enterprise', 'Free Tier (Local)'].map(p => (
+                              <option key={p} value={p}>{p}</option>
+                            ))}
+                          </select>
+                        </td>
+                        <td className="px-8 py-5 text-xs font-medium text-[#94a3b8]">
+                          {u.created_at ? new Date(u.created_at).toLocaleDateString() : 'Local'}
+                        </td>
+                        <td className="px-8 py-5">
+                          <button
+                            onClick={() => handleDeleteUser(u.id)}
+                            className="px-4 py-2 text-rose-500 border border-rose-100 bg-rose-50 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-rose-500 hover:text-white transition-all"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Charts Section (overview + products tabs) */}
+        {activeTab !== 'users' && (
         <div className="flex gap-8 mb-12 px-2">
            {/* Revenue Chart */}
            <motion.div 
