@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
   Search, 
@@ -8,7 +8,6 @@ import {
   Clock, 
   TrendingUp,
   BarChart3,
-  Share2,
   MoreHorizontal
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -20,24 +19,13 @@ import {
   BarChart, 
   Bar, 
   XAxis, 
-  YAxis, 
-  CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
   Cell
 } from 'recharts';
 
-const chartData = [
-  { name: 'MON', value: 45 },
-  { name: 'TUE', value: 65 },
-  { name: 'WED', value: 55 },
-  { name: 'THU', value: 75 },
-  { name: 'FRI', value: 95 },
-  { name: 'SAT', value: 85 },
-  { name: 'SUN', value: 70 },
-];
 
-const PredictionCard = ({ title, status, prob, date, image, type }) => {
+const PredictionCard = ({ title, prob, date, image, type }) => {
   const navigate = useNavigate();
   const x = useMotionValue(0);
   const y = useMotionValue(0);

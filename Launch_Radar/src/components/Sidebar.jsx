@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   LayoutDashboard, 
@@ -8,9 +7,6 @@ import {
   Store, 
   UserCog, 
   Settings, 
-  Search,
-  Bell,
-  ChevronRight,
   PlusCircle
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';

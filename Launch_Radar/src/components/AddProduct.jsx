@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronRight, 
-  ChevronLeft, 
   Info, 
   UploadCloud, 
   Trash2, 
@@ -11,10 +10,8 @@ import {
   Zap, 
   FileText, 
   Tag as TagIcon, 
-  Globe, 
-  ShieldCheck,
-  MoreVertical,
-  X
+  X,
+  Monitor
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';

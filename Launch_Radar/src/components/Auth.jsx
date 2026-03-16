@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -218,7 +218,7 @@ const Auth = () => {
                 </form>
 
                 <p className="text-center mt-8 text-sm font-semibold text-text-muted">
-                  Don't have an account? <button onClick={() => setMode('SIGNUP')} className="text-primary hover:underline font-bold">Start your 14-day free trial</button>
+                  Don&apos;t have an account? <button onClick={() => setMode('SIGNUP')} className="text-primary hover:underline font-bold">Start your 14-day free trial</button>
                 </p>
               </motion.div>
             ) : (

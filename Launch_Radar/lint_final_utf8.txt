@@ -1,0 +1,34 @@
+﻿
+> launch-radar@0.0.0 lint
+> eslint .
+
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\AdminConsole.jsx
+  21:16  error  'useNavigate' is defined but never used  no-unused-vars
+  23:10  error  'useApp' is defined but never used       no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Cart.jsx
+  269:7  error  Parsing error: Identifier 'Bot' has already been declared
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\CheckoutPayment.jsx
+  282:7  error  Parsing error: Identifier 'Globe' has already been declared
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Dashboard.jsx
+  22:3  error  'YAxis' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\NewReport.jsx
+    1:8    error  'React' is defined but never used                                no-unused-vars
+    9:3    error  'TrendingUp' is defined but never used                           no-unused-vars
+  201:112  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  201:129  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  249:92   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  249:183  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\SectorReport.jsx
+  211:333  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  211:350  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  217:148  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  217:157  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+Γ£û 15 problems (15 errors, 0 warnings)
+

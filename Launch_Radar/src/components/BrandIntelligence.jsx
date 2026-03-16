@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Search, 
@@ -11,9 +11,9 @@ import {
   Zap,
   Target,
   BarChart2,
-  Share2,
   ExternalLink
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 const IconMap = {
@@ -109,9 +109,9 @@ const IntelligenceCard = ({ name, ticker, price, change, sector, logo: Logo, for
 };
 
 const BrandIntelligence = () => {
-  const [data, setData] = React.useState([]);
+  const [data, setData] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('http://localhost:5000/api/brand-intelligence')
       .then(res => res.json())
       .then(result => {
@@ -156,7 +156,7 @@ const BrandIntelligence = () => {
           <div className="max-w-3xl">
             <h1 className="text-5xl font-black text-[#0f172a] mb-6 tracking-tighter leading-tight">Global Brand Intelligence</h1>
             <p className="text-lg font-medium text-[#64748b] leading-relaxed">
-              Track real-time performance and AI-predicted product cycles for the world's most influential companies.
+              Track real-time performance and AI-predicted product cycles for the world&apos;s most influential companies.
             </p>
           </div>
           <button className="px-8 py-4 bg-white border border-[#e2e8f0] rounded-2xl font-black text-sm text-[#1e293b] flex items-center gap-3 hover:shadow-xl hover:border-primary/20 transition-all active:scale-95 shadow-sm">

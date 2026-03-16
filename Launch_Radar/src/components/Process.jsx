@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 
 const StepCard = ({ step, index }) => {
@@ -85,7 +85,7 @@ const Process = () => {
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-3xl md:text-[2.5rem] font-bold mb-4 leading-tight">How our prediction engine works</h2>
-          <p className="text-text-muted text-lg md:text-xl max-w-[700px] mx-auto">We process millions of technical and social data points to identify the "signal" within the noise.</p>
+          <p className="text-text-muted text-lg md:text-xl max-w-[700px] mx-auto">We process millions of technical and social data points to identify the &quot;signal&quot; within the noise.</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {steps.map((step, index) => (

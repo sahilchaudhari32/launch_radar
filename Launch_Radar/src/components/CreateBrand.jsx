@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronRight, 
   Upload, 
@@ -7,7 +6,6 @@ import {
   ShieldCheck, 
   Sparkles, 
   Lock,
-  ChevronLeft,
   Image as ImageIcon,
   CheckCircle2,
   X

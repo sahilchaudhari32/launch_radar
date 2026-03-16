@@ -1,5 +1,5 @@
-﻿import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Settings as SettingsIcon, 
   User, 
@@ -10,13 +10,8 @@ import {
   Edit3, 
   Camera, 
   Search,
-  ChevronRight,
-  CreditCard,
-  Trash2,
   Zap,
-  Info,
-  CheckCircle2,
-  ExternalLink
+  CheckCircle2
 } from 'lucide-react';
 import Sidebar from './Sidebar';
 import { useApp } from '../context/AppContext';

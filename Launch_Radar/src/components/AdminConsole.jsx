@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { 
   BarChart3, 
   TrendingUp, 
-  TrendingDown, 
   Users, 
   ShoppingBag, 
   DollarSign, 
@@ -12,18 +11,15 @@ import {
   MoreHorizontal, 
   Plus, 
   Filter,
-  Globe,
   ArrowUpRight,
   ArrowDownRight,
-  Monitor,
   Cpu,
   ShieldCheck,
   Zap
 } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import { useApp } from '../context/AppContext';
 
 const IconMap = {
   Cpu, ShieldCheck, BarChart3, Zap
@@ -54,14 +50,12 @@ const StatCard = ({ title, value, trend, icon: Icon, trendColor, index }) => (
 );
 
 const AdminConsole = () => {
-  const navigate = useNavigate();
-  const { user } = useApp();
-  const [adminData, setAdminData] = React.useState({ revenueData: [], regions: [], products: [] });
-  const [users, setUsers] = React.useState([]);
-  const [adminStats, setAdminStats] = React.useState({ totalUsers: 0, totalProducts: 0, activeUsers: 0, revenue: '...' });
-  const [activeTab, setActiveTab] = React.useState('overview');
+  const [adminData, setAdminData] = useState({ revenueData: [], regions: [], products: [] });
+  const [users, setUsers] = useState([]);
+  const [adminStats, setAdminStats] = useState({ totalUsers: 0, totalProducts: 0, activeUsers: 0, revenue: '...' });
+  const [activeTab, setActiveTab] = useState('overview');
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('http://localhost:5000/api/admin-console')
       .then(res => res.json())
       .then(result => { if (result) setAdminData(result); })
@@ -73,14 +67,14 @@ const AdminConsole = () => {
       .catch(console.error);
   }, []);
 
-  const loadUsers = React.useCallback(() => {
+  const loadUsers = useCallback(() => {
     fetch('http://localhost:5000/api/admin/users')
       .then(res => res.json())
       .then(data => setUsers(Array.isArray(data) ? data : []))
       .catch(console.error);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (activeTab === 'users') loadUsers();
   }, [activeTab, loadUsers]);
 
@@ -218,7 +212,8 @@ const AdminConsole = () => {
         )}
 
         {/* Charts Section (overview + products tabs) */}
-        {activeTab !== 'users' && (
+        {activeTab !== 'users' && (<>
+
         <div className="flex gap-8 mb-12 px-2">
            {/* Revenue Chart */}
            <motion.div 
@@ -388,6 +383,7 @@ const AdminConsole = () => {
               </table>
            </div>
         </motion.div>
+        </>)}
 
         {/* Floating Mini Profile (as seen in screenshot) */}
         <div className="fixed bottom-12 left-6 w-52 z-50">

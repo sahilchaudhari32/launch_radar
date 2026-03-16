@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
   Plus, 
-  Search, 
-  Bell, 
   Share2, 
   Paperclip, 
   Image as ImageIcon, 
   Send,
   Zap,
   Target,
-  Sparkles,
-  ChevronRight,
-  MoreHorizontal
+  Sparkles
 } from 'lucide-react';
 import Sidebar from './Sidebar';
 
@@ -74,7 +69,7 @@ const PredictionCard = ({ icon: Icon, title, confidence, launch, features, ratio
         <div>
           <p className="text-[10px] font-black text-[#94a3b8] uppercase tracking-widest mb-2">AI Rationale</p>
           <p className="text-xs font-medium text-[#64748b] leading-relaxed italic border-l-2 border-[#e2e8f0] pl-4">
-            "{rationale}"
+            &quot;{rationale}&quot;
           </p>
         </div>
       </div>
@@ -83,16 +78,6 @@ const PredictionCard = ({ icon: Icon, title, confidence, launch, features, ratio
 };
 
 const AIPredictions = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 260, damping: 20 } }
-  };
-
   return (
     <div className="flex min-h-screen bg-white">
       <Sidebar />
@@ -157,7 +142,7 @@ const AIPredictions = () => {
             >
               <div className="max-w-2xl bg-primary p-6 rounded-3xl rounded-tr-none text-white shadow-xl shadow-primary/20">
                 <p className="text-sm font-bold leading-relaxed">
-                  What's the latest prediction on Apple's upcoming wearable tech and Tesla's ecosystem expansion?
+                  What&apos;s the latest prediction on Apple&apos;s upcoming wearable tech and Tesla&apos;s ecosystem expansion?
                 </p>
                 <p className="text-[9px] font-black opacity-60 mt-4 text-right uppercase tracking-widest">10:42 AM</p>
               </div>

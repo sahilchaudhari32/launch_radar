@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Plus, 
   Search, 
   Bell, 
-  UserCircle2, 
   Cpu, 
   Globe, 
   Users, 
   Zap,
-  Target,
   BarChart2,
   Calendar,
-  MessageSquare,
   ChevronRight,
   TrendingUp,
-  ExternalLink,
-  Laptop
+  ExternalLink
 } from 'lucide-react';
 import Sidebar from './Sidebar';
 
@@ -137,7 +133,7 @@ const BrandDetail = () => {
 
               <div className="mb-12">
                 <p className="text-xl font-medium text-[#475569] leading-relaxed italic mb-6">
-                  "Pioneering the future of edge computing with neural architectures."
+                  &quot;Pioneering the future of edge computing with neural architectures.&quot;
                 </p>
                 <div className="flex items-center gap-8 pt-6 border-t border-[#f1f5f9]">
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary bg-primary/5 px-4 py-2 rounded-full">

@@ -1,0 +1,13 @@
+﻿
+> launch-radar@0.0.0 lint
+> eslint .
+
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Cart.jsx
+  219:25  error  'Globe' is not defined  react/jsx-no-undef
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\CheckoutPayment.jsx
+  10:16  error  'useNavigate' is defined but never used  no-unused-vars
+
+Γ£û 2 problems (2 errors, 0 warnings)
+

@@ -1,0 +1,91 @@
+﻿
+> launch-radar@0.0.0 lint
+> eslint .
+
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\AIPredictions.jsx
+   72:13  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   72:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  145:23  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  145:56  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  145:91  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\AddProduct.jsx
+  253:22  error  'Monitor' is not defined  react/jsx-no-undef
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\AdminConsole.jsx
+  54:9   error  'navigate' is assigned a value but never used  no-unused-vars
+  55:11  error  'user' is assigned a value but never used      no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Auth.jsx
+  221:22  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\BrandDetail.jsx
+    2:18  error  'AnimatePresence' is defined but never used                      no-unused-vars
+  136:19  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  136:86  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\BrandIntelligence.jsx
+  158:88  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  195:16  error  'Link' is not defined                                            react/jsx-no-undef
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Cart.jsx
+  110:17  error  'Search' is not defined  react/jsx-no-undef
+  218:25  error  'Globe' is not defined   react/jsx-no-undef
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\CheckoutDelivery.jsx
+   2:10  error  'motion' is defined but never used                no-unused-vars
+  16:20  error  'setFormData' is assigned a value but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\CheckoutPayment.jsx
+   14:9   error  'navigate' is assigned a value but never used                    no-unused-vars
+  179:31  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\CreateBrand.jsx
+  2:10  error  'motion' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Dashboard.jsx
+  22:3  error  'YAxis' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\MarketIntelligence.jsx
+   2:18  error  'AnimatePresence' is defined but never used  no-unused-vars
+   6:3   error  'Bell' is defined but never used             no-unused-vars
+  10:3   error  'BarChart2' is defined but never used        no-unused-vars
+  12:3   error  'ChevronRight' is defined but never used     no-unused-vars
+  23:13  error  'Briefcase' is not defined                   no-undef
+  48:64  error  'trend' is defined but never used            no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\NewReport.jsx
+    1:8    error  'React' is defined but never used                                no-unused-vars
+    9:3    error  'TrendingUp' is defined but never used                           no-unused-vars
+  201:112  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  201:129  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  249:92   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  249:183  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Process.jsx
+   1:8    error  'React' is defined but never used                                no-unused-vars
+  88:155  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  88:162  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\SectorReport.jsx
+   16:7    error  'Bot' is assigned a value but never used                         no-unused-vars
+  231:333  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  231:350  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  237:148  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  237:157  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Settings.jsx
+  13:3  error  'ChevronRight' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Startups.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\components\Store.jsx
+  2:18  error  'AnimatePresence' is defined but never used  no-unused-vars
+
+C:\Users\sahil\Videos\Code with Sahil\coding\server\New folder\launch_radar\Launch_Radar\src\context\AppContext.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+Γ£û 46 problems (46 errors, 0 warnings)
+

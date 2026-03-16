@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
   Download, 
@@ -6,9 +6,6 @@ import {
   ChevronLeft, 
   Zap, 
   Target, 
-  AlertCircle, 
-  TrendingUp, 
-  PieChart as PieChartIcon,
   Search,
   Bell
 } from 'lucide-react';
@@ -18,8 +15,6 @@ import {
   BarChart, 
   Bar, 
   XAxis, 
-  YAxis, 
-  CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
   PieChart, 
@@ -202,7 +197,7 @@ const NewReport = () => {
                   </div>
                 </div>
                 <div className="space-y-6 text-[#475569] leading-relaxed font-medium">
-                  <p className="border-l-4 border-primary pl-6">The market is shifting from base model hype to "Day 2 Operations" infrastructure. Enterprise-grade deployment tools are attracting 40% of new series B capital.</p>
+                  <p className="border-l-4 border-primary pl-6">The market is shifting from base model hype to &quot;Day 2 Operations&quot; infrastructure. Enterprise-grade deployment tools are attracting 40% of new series B capital.</p>
                   <div className="grid grid-cols-2 gap-8 py-4">
                     <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
                       <p className="text-[10px] font-black text-emerald-600 uppercase mb-3 tracking-widest">Growth Driver</p>
@@ -250,7 +245,7 @@ const NewReport = () => {
                     <p className="text-xl font-black mb-1">NeuralLayer</p>
                     <p className="text-[10px] font-bold opacity-80 uppercase tracking-widest">Distributed Inference Engine</p>
                   </div>
-                  <p className="text-xs font-bold opacity-80 leading-relaxed mb-10 italic">"Pioneering sub-10ms edge inference for enterprise AR. Extreme M&A target potential for Q4."</p>
+                  <p className="text-xs font-bold opacity-80 leading-relaxed mb-10 italic">&quot;Pioneering sub-10ms edge inference for enterprise AR. Extreme M&amp;A target potential for Q4.&quot;</p>
                   <Link to="/predictions">
                     <button className="w-full py-4 bg-white text-primary rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl hover:bg-slate-50 transition-colors">
                       Detailed Intelligence Deep-Dive

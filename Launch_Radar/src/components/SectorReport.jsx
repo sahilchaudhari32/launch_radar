@@ -1,43 +1,19 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   FileText, 
   Share2, 
   Download, 
-  TrendingUp, 
-  TrendingDown, 
   Zap, 
   Target, 
-  MessageSquare,
   ChevronRight,
   Search,
-  MoreHorizontal,
-  Plus
+  Plus,
+  Bell
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-const Bot = ({ size, className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2.5" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M12 8V4H8"/>
-    <rect width="16" height="12" x="4" y="8" rx="2"/>
-    <path d="M2 14h2"/>
-    <path d="M20 14h2"/>
-    <path d="M15 13v2"/>
-    <path d="M9 13v2"/>
-  </svg>
-);
+
 
 const MetricStat = ({ label, value, change, color, barWidth, isTrend = false }) => (
   <motion.div 
@@ -232,13 +208,13 @@ const SectorReport = () => {
 
              <div className="space-y-10">
                <p className="text-base font-medium text-[#475569] leading-relaxed">
-                 The current market sentiment for the <span className="text-primary font-black">Generative AI Infrastructure</span> sector remains decidedly bullish, driven by the decoupling of base model development and enterprise-grade deployment tools. We observed a significant 12.4% uptick in Q3 funding specifically targeting "Day 2 Operations" (monitoring, compliance, and cost management).
+                 The current market sentiment for the <span className="text-primary font-black">Generative AI Infrastructure</span> sector remains decidedly bullish, driven by the decoupling of base model development and enterprise-grade deployment tools. We observed a significant 12.4% uptick in Q3 funding specifically targeting &quot;Day 2 Operations&quot; (monitoring, compliance, and cost management).
                </p>
 
                <div className="grid grid-cols-2 gap-8">
                  <div className="bg-[#f8fafc] p-8 rounded-3xl border-l-[6px] border-l-primary border border-transparent group hover:border-[#e2e8f0] transition-all">
                     <h4 className="text-[10px] font-black text-primary uppercase tracking-widest mb-4">Key Driver: Infrastructure Consolidation</h4>
-                    <p className="text-xs font-bold text-[#64748b] leading-relaxed">Smaller, specialized LLM tools are being absorbed into unified "OS-style" platforms, reducing integration friction for Fortune 500 adopters.</p>
+                    <p className="text-xs font-bold text-[#64748b] leading-relaxed">Smaller, specialized LLM tools are being absorbed into unified &quot;OS-style&quot; platforms, reducing integration friction for Fortune 500 adopters.</p>
                  </div>
                  <div className="bg-[#f8fafc] p-8 rounded-3xl border-l-[6px] border-l-emerald-500 border border-transparent group hover:border-[#e2e8f0] transition-all">
                     <h4 className="text-[10px] font-black text-emerald-500 uppercase tracking-widest mb-4">Risk Factor: GPU Scarcity</h4>
@@ -247,7 +223,7 @@ const SectorReport = () => {
                </div>
 
                <p className="text-base font-medium text-[#475569] leading-relaxed italic border-l-4 border-slate-100 pl-8">
-                Our predictive models suggest that the "Vector Database" frenzy is beginning to stabilize as standardized incumbents emerge. Investors should now pivot focus towards <span className="text-primary font-black">Custom Hardware Interoperability</span> and <span className="text-primary font-black">On-Premise Private LLM Deployment</span>, which are projected to lead Q4 growth metrics by up to 18%.
+                Our predictive models suggest that the &quot;Vector Database&quot; frenzy is beginning to stabilize as standardized incumbents emerge. Investors should now pivot focus towards <span className="text-primary font-black">Custom Hardware Interoperability</span> and <span className="text-primary font-black">On-Premise Private LLM Deployment</span>, which are projected to lead Q4 growth metrics by up to 18%.
                </p>
              </div>
           </div>

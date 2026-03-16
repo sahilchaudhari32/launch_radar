@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, 
@@ -15,9 +15,9 @@ const IconMap = {
 
 const NotificationDropdown = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState('All');
-  const [notifications, setNotifications] = React.useState([]);
+  const [notifications, setNotifications] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('http://localhost:5000/api/notifications')
       .then(res => res.json())
       .then(data => setNotifications(data))

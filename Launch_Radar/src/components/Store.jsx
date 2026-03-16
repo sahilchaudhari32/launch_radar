@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Search, 
   ShoppingCart, 
   ChevronRight, 
   Star, 
-  Cpu, 
-  Globe, 
-  ShieldCheck, 
   Zap,
-  MoreVertical,
   Filter,
   ChevronDown,
   RefreshCw,
@@ -126,7 +122,6 @@ const ProductCard = ({ product, index }) => {
 
 const Store = () => {
   const { cartCount, user } = useApp();
-  const [loadCount, setLoadCount] = useState(4);
   const [products, setProducts] = useState([]);
   const categories = ['All Products', 'Hardware', 'SaaS Platforms', 'AI Modules', 'Neural Gear'];
   

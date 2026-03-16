@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { 
   ChevronRight, 
   MapPin, 
-  Truck, 
   Info, 
-  ShieldCheck, 
   ChevronLeft,
-  Globe,
   Zap,
   Briefcase
 } from 'lucide-react';
@@ -16,7 +12,7 @@ import Sidebar from './Sidebar';
 
 const CheckoutDelivery = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [formData] = useState({
     fullName: 'Johnathan Doe',
     address1: 'Spaceport Sector 7G, Dock 42',
     address2: 'Apt, Suite, Unit',

@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Search, 
   HelpCircle, 
-  Bell, 
   Zap, 
   TrendingUp, 
-  TrendingDown, 
   Target, 
-  BarChart2, 
   Cpu, 
-  ShieldCheck,
-  ChevronRight,
   Plus,
   RefreshCw,
   FileText,
-  Briefcase,
   Globe,
-  Mail,
-  MoreHorizontal
+  Mail
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 const IconMap = {
-  FileText, Briefcase, Target, Globe
+  FileText, Target, Globe
 };
 
 const Bot = ({ size, className }) => (
@@ -49,7 +42,7 @@ const Bot = ({ size, className }) => (
   </svg>
 );
 
-const SectorPerformanceCard = ({ name, icon: Icon, percentage, trend, values }) => {
+const SectorPerformanceCard = ({ name, icon: Icon, percentage, values }) => {
   return (
     <motion.div 
       whileHover={{ y: -5 }}
@@ -90,7 +83,7 @@ const MarketIntelligence = () => {
   const [email, setEmail] = useState('');
   const [marketData, setMarketData] = useState({ momentumItems: [], distribution: [] });
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch('http://localhost:5000/api/market-intelligence')
       .then(res => res.json())
       .then(data => setMarketData(data))

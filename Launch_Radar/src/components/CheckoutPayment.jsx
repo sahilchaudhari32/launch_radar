@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   ChevronRight, 
-  ChevronLeft,
   CreditCard,
-  Search,
   CheckCircle2,
-  Lock,
-  Zap,
   ShieldCheck,
-  Info,
-  DollarSign
+  Info
 } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 const CheckoutPayment = () => {
-  const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [promoCode, setPromoCode] = useState('RADAR20');
 
@@ -181,7 +175,7 @@ const CheckoutPayment = () => {
 
                  <p className="text-[10px] font-bold text-[#94a3b8] text-center leading-relaxed">
                    By completing this purchase, you agree to <br />
-                   LaunchRadar's <span className="text-[#1e293b] underline cursor-pointer">Terms of Service</span> and <br />
+                   LaunchRadar&apos;s <span className="text-[#1e293b] underline cursor-pointer">Terms of Service</span> and <br />
                    <span className="text-[#1e293b] underline cursor-pointer">Privacy Policy</span>.
                  </p>
 

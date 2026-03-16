@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { useState } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { 
   Plus, 
   Search, 
   HelpCircle, 
   ChevronDown, 
   Heart, 
-  ExternalLink,
   Cpu,
   Zap,
   Bot,
   Watch,
-  Eye,
-  MoreHorizontal
+  Eye
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
-const BrandCard = ({ name, description, category, status, logoColor, icon: Icon }) => {
+const BrandCard = ({ name, description, status, logoColor, icon: Icon }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseXSpring = useSpring(x);
