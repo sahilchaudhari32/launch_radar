@@ -1,9 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
-const Auth = ({ initialMode = 'LOGIN', onBack }) => {
+const Auth = () => {
+  const [searchParams] = useSearchParams();
+  const initialMode = searchParams.get('mode')?.toUpperCase() === 'SIGNUP' ? 'SIGNUP' : 'LOGIN';
   const [mode, setMode] = useState(initialMode);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const newMode = searchParams.get('mode')?.toUpperCase();
+    if (newMode === 'SIGNUP' || newMode === 'LOGIN') {
+      setMode(newMode);
+    }
+  }, [searchParams]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate auth and redirect to dashboard
+    navigate('/dashboard');
+  };
   
   // --- 3D Tilt Logic for the form card ---
   const x = useMotionValue(0);
@@ -40,7 +57,7 @@ const Auth = ({ initialMode = 'LOGIN', onBack }) => {
       <motion.button 
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        onClick={onBack}
+        onClick={() => navigate('/')}
         className="absolute top-6 left-6 z-50 flex items-center gap-2 text-text-muted hover:text-primary transition-colors cursor-pointer group"
       >
         <div className="w-8 h-8 rounded-full border border-black/5 flex items-center justify-center bg-white shadow-sm group-hover:border-primary group-hover:shadow-md transition-all">
@@ -93,7 +110,7 @@ const Auth = ({ initialMode = 'LOGIN', onBack }) => {
                   <span className="relative bg-white px-4 text-xs font-bold text-text-muted uppercase tracking-wider">or continue with email</span>
                 </div>
 
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-bold text-text-main mb-2">Email Address</label>
                     <input type="email" placeholder="name@company.com" className="w-full px-5 py-3.5 rounded-xl border border-black/5 bg-[#f9fafb] focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none" />
@@ -157,7 +174,7 @@ const Auth = ({ initialMode = 'LOGIN', onBack }) => {
                   <span className="relative bg-white px-4 text-xs font-bold text-text-muted uppercase tracking-wider">or continue with email</span>
                 </div>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-bold text-text-main mb-2">Full Name</label>
                     <div className="relative">

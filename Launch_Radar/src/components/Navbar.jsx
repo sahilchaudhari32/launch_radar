@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Navbar = ({ onAuthOpen }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className={`sticky top-0 z-[1000] border-b border-black/5 py-4 transition-colors duration-300 ${isMenuOpen ? 'bg-white' : 'bg-white/80 backdrop-blur-xl'}`}>
@@ -45,7 +48,7 @@ const Navbar = ({ onAuthOpen }) => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => onAuthOpen('SIGNUP')}
+            onClick={() => navigate('/auth?mode=signup')}
             className="btn btn-primary !px-5 !py-2 !text-[0.9rem]"
           >
             Sign Up
@@ -53,7 +56,7 @@ const Navbar = ({ onAuthOpen }) => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => onAuthOpen('LOGIN')}
+            onClick={() => navigate('/auth?mode=login')}
             className="btn !bg-primary !text-white hover:!bg-primary/90 !px-5 !py-2 !text-[0.9rem]"
           >
             Login
@@ -117,13 +120,13 @@ const Navbar = ({ onAuthOpen }) => {
                 <input type="text" placeholder="Search startups..." className="bg-transparent border-none outline-none text-lg w-full" />
               </div>
               <button 
-                onClick={() => { onAuthOpen('SIGNUP'); setIsMenuOpen(false); }}
+                onClick={() => { navigate('/auth?mode=signup'); setIsMenuOpen(false); }}
                 className="btn btn-primary w-full !py-4 text-lg"
               >
                 Sign Up
               </button>
               <button 
-                onClick={() => { onAuthOpen('LOGIN'); setIsMenuOpen(false); }}
+                onClick={() => { navigate('/auth?mode=login'); setIsMenuOpen(false); }}
                 className="btn !bg-primary !text-white w-full !py-4 text-lg"
               >
                 Login

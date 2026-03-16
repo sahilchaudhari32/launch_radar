@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
-const CTA = ({ onAuthOpen }) => {
+const CTA = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 md:py-32" id="cta">
       <div className="container">
@@ -28,7 +30,7 @@ const CTA = ({ onAuthOpen }) => {
               <motion.button 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => onAuthOpen('SIGNUP')}
+                onClick={() => navigate('/auth?mode=signup')}
                 className="btn bg-white text-primary hover:bg-slate-50 transition-all duration-300 w-full sm:w-auto"
               >Join the Waitlist</motion.button>
               <motion.button 

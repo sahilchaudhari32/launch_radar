@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
   // --- Dynamic Graph Logic ---
   const [graphData, setGraphData] = useState([40, 60, 50, 80, 100]);
   
@@ -112,6 +114,7 @@ const Hero = () => {
               <motion.button 
                 whileHover={{ scale: 1.05, rotate: -1 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/auth?mode=signup')}
                 className="btn btn-primary w-full sm:w-auto"
               >
                 Get Early Access

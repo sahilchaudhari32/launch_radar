@@ -5,10 +5,30 @@
   --color-primary: #2b59ff;
   --color-primary-hover: #1e40c1;
   --color-bg-color: #f6f9fc;
+  --color-card-bg: #ffffff;
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-active: #2b59ff;
   --color-text-main: #1a1f36;
   --color-text-muted: #697386;
   --color-accent-purple: #7c3aed;
   --color-accent-green: #10b981;
+  --color-accent-orange: #f59e0b;
+  --color-border-light: #e3e8ee;
+}
+
+@layer utilities {
+  .shadow-premium {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+  .shadow-premium-hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#1e293b];
+  }
+  .sidebar-item-active {
+    @apply bg-primary text-white hover:bg-primary-hover hover:text-white shadow-lg shadow-primary/20;
+  }
 }
 
 body {
